@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter PIN</title>
+    <link rel="stylesheet" href="pin.css">
+</head>
+<body>
+    <div class="place">
+        <div class="task">
+            <form>
+                <div class="display">
+                    <input type="password" name="display" id="pinDisplay" readonly>
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="addNumber('1')">
+                    <input type="button" value="2" onclick="addNumber('2')">
+                    <input type="button" value="3" onclick="addNumber('3')">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="addNumber('4')">
+                    <input type="button" value="5" onclick="addNumber('5')">
+                    <input type="button" value="6" onclick="addNumber('6')">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="addNumber('7')">
+                    <input type="button" value="8" onclick="addNumber('8')">
+                    <input type="button" value="9" onclick="addNumber('9')">
+                </div>
+                <div>
+                    <input type="button" value="clear" onclick="clearPin()">
+                    <input type="button" value="0" onclick="addNumber('0')">
+                    <input type="button" value="enter" onclick="submitPin()">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function addNumber(number) {
+            var pinDisplay = document.getElementById('pinDisplay');
+            if (pinDisplay.value.length < 4) {
+            pinDisplay.value += number;
+        }
+        }
+
+        function clearPin() {
+            var pinDisplay = document.getElementById('pinDisplay');
+            pinDisplay.value = '';
+        }
+
+        function submitPin() {
+            var pinDisplay = document.getElementById('pinDisplay');
+            var enteredPin = pinDisplay.value;
+            // Perform validation or further actions with the entered PIN here
+            console.log('Entered PIN:', enteredPin);
+        }
+    </script>
+</body>
+</html>
